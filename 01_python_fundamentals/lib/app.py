@@ -17,7 +17,6 @@ import ipdb
 
 pet_mood = "Hungry!"
 pet_name = "Rose"
-pet_age = 0
 if pet_mood == 'Hungry!':
     print(f"{pet_name} needs to be fed.")
 elif pet_mood == 'Rowdy!':
@@ -67,16 +66,10 @@ def pet_status(pet_name, pet_mood):
     # If our function is given an incorrect datatype, it should handle the TypeError exception and alert the user
     # pet_birthday(10) => "Happy Birthday! Your pet is now 11."
     # pet_birthday("oops") => "Type Error Occurred"
-def pet_birthday(add):
-    global pet_age
+def pet_birthday(pet_age):
     try:
-        pet_age+=add
-        print(f"Happy Birthday! Your pet is now {pet_age}.")
+        pet_age+=1
+        return f"Happy Birthday! Your pet is now {pet_age}"
     except TypeError:
         print("Type Error Occurred")
     # Note => To view more common Python exceptions, visit https://docs.python.org/3/library/exceptions.html
-
-# 🚨 To create an ipdb breakpoint, comment / uncomment line below:
-ipdb.set_trace()
-
-
